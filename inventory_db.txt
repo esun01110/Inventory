@@ -1,0 +1,27 @@
+CREATE TABLE item_table (
+    `id` int(55) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    `supplier_id` int,
+    `supplier` varchar(255) NOT NULL,
+    `item_name` varchar(255) NOT NULL,
+    `item_description` varchar(255) NOT NULL,
+    `item_no` int(55) NOT NULL,
+    `item_unit` varchar(255) NOT NULL,
+    `item_quantity` int(55) NOT NULL,
+    `item_unitcost` int(55) NOT NULL,
+    `item_totalcost` varchar(55) NOT NULL,
+    FOREIGN KEY (`supplier_id`) REFERENCES suplier_table (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE suplier_table (
+    `id` int(55) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    `supplier_name` varchar(255) NOT NULL,
+    `supplier_address` varchar(255) NOT NULL,
+    `supplier_tin` int(55) NOT NULL,
+    `supplier_pno` varchar(255) NOT NULL,
+    `supplier_date` varchar(255) NOT NULL,
+    `supplier_mop` varchar(255) NOT NULL,
+    `supplier_PoD` varchar(255) NOT NULL,
+    `supplier_DoD` varchar(255) NOT NULL,
+    `supplier_DT` varchar(255) NOT NULL,
+    `supplier_PT` varchar(255) NOT NULL
+);

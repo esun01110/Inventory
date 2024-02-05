@@ -1,0 +1,129 @@
+﻿Build1=Default,b4a.example
+File1=additem.bal
+File10=editsupplierpage.bal
+File11=editsupplierpageContainer.bal
+File12=hamburger.png
+File13=hamburger-black.png
+File14=item.bal
+File15=itemDisplay.bal
+File16=MainPage.bal
+File17=supplier.bal
+File18=supplier.png
+File2=addsupplier.bal
+File3=bin.png
+File4=check.png
+File5=displaysupplier.bal
+File6=displaySupplierOnMain.bal
+File7=drawer.bal
+File8=edititempage.bal
+File9=editpage.bal
+FileGroup1=Default Group
+FileGroup10=Default Group
+FileGroup11=Default Group
+FileGroup12=Default Group
+FileGroup13=Default Group
+FileGroup14=Default Group
+FileGroup15=Default Group
+FileGroup16=Default Group
+FileGroup17=Default Group
+FileGroup18=Default Group
+FileGroup2=Default Group
+FileGroup3=Default Group
+FileGroup4=Default Group
+FileGroup5=Default Group
+FileGroup6=Default Group
+FileGroup7=Default Group
+FileGroup8=Default Group
+FileGroup9=Default Group
+Group=Default Group
+Library1=appcompat
+Library10=json
+Library2=b4xdrawer
+Library3=b4xpages
+Library4=core
+Library5=dialogs2
+Library6=okhttputils2
+Library7=phone
+Library8=viewsex
+Library9=xcustomlistview
+ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: https://www.b4x.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="5" android:targetSdkVersion="31"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~CreateResourceFromFile(Macro, Themes.LightTheme)~\n~'End of default text.~\n~~\n~CreateResourceFromFile(Macro, Core.NetworkClearText)~\n~~\n~'SetApplicationAttribute(android:theme, "@style/DarkTheme")~\n~'CreateResource(values, colors.xml,~\n~'<resources>~\n~'    <color name="actionbar">#ff039be5</color>~\n~'	<color name="statusbar">#ff006db3</color>~\n~'	<color name="textColorPrimary">#ffffffff</color>~\n~'	<color name="navigationBar">#ff006db3</color>~\n~'</resources>~\n~')~\n~'CreateResource(values, theme.xml,~\n~'<resources>~\n~'    <style name="LightTheme" parent="@android:style/Theme.Material.Light">~\n~'        <item name="android:colorPrimary">@color/actionbar</item>~\n~'        <item name="android:colorPrimaryDark">@color/statusbar</item>~\n~'        <item name="android:textColorPrimary">@color/textColorPrimary</item>~\n~'        <item name="android:navigationBarColor">@color/navigationBar</item>~\n~'		 <item name="android:statusBarColor">@android:color/black</item>~\n~'    </style>~\n~'</resources>~\n~')
+Module1=AddItemPage
+Module2=AddSupplierPage
+Module3=|relative|..\B4XMainPage
+Module4=CLVSwipe
+Module5=editItemPage
+Module6=editSupplierPage
+Module7=Starter
+NumberOfFiles=18
+NumberOfLibraries=10
+NumberOfModules=7
+Version=12.2
+@EndOfDesignText@
+#Region  Project Attributes 
+	#ApplicationLabel: School supplies stock
+	#VersionCode: 15
+	#VersionName: 
+	'SupportedOrientations possible values: unspecified, landscape or portrait.
+	#SupportedOrientations: portrait
+	#CanInstallToExternalStorage: False
+#End Region
+	
+#Region  Activity Attributes 
+	#FullScreen: False
+	#IncludeTitle: True
+#End Region
+
+'#BridgeLogger: True
+
+Sub Process_Globals
+	Public ActionBarHomeClicked As Boolean
+End Sub
+
+Sub Globals
+
+End Sub
+
+Sub Activity_Create(FirstTime As Boolean)
+	Dim pm As B4XPagesManager
+	pm.Initialize(Activity)
+End Sub
+
+'Template version: B4A-1.01
+#Region Delegates
+
+Sub Activity_ActionBarHomeClick
+	ActionBarHomeClicked = True
+	B4XPages.Delegate.Activity_ActionBarHomeClick
+	ActionBarHomeClicked = False
+End Sub
+
+Sub Activity_KeyPress (KeyCode As Int) As Boolean
+	Return B4XPages.Delegate.Activity_KeyPress(KeyCode)
+End Sub
+
+Sub Activity_Resume
+	B4XPages.Delegate.Activity_Resume
+End Sub
+
+Sub Activity_Pause (UserClosed As Boolean)
+	B4XPages.Delegate.Activity_Pause
+End Sub
+
+Sub Activity_PermissionResult (Permission As String, Result As Boolean)
+	B4XPages.Delegate.Activity_PermissionResult(Permission, Result)
+End Sub
+
+Sub Create_Menu (Menu As Object)
+	B4XPages.Delegate.Create_Menu(Menu)
+End Sub
+
+#if Java
+public boolean _onCreateOptionsMenu(android.view.Menu menu) {
+	 processBA.raiseEvent(null, "create_menu", menu);
+	 return true;
+	
+}
+#End If
+#End Region
+
+'Program code should go into B4XMainPage and other pages.
