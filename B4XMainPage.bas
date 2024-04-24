@@ -89,7 +89,7 @@ Private Sub B4XPage_Created (Root1 As B4XView)
 	B4XPages.AddMenuItem(Me,"Item")
 	B4XPages.AddMenuItem(Me,"Supplier")
 	
-	ip = "192.168.43.189"
+	ip = ""
 	'UI
 	DisplayData
 	DrawerSupplierClv
